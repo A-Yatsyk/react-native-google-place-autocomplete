@@ -5,7 +5,7 @@ React Native components for the Place Autocomplete service of the Google Places 
 ## Installing
 
 ```
-npm install react-native-google-place-autocomplete --save
+npm install https://github.com/A-Yatsyk/react-native-google-place-autocomplete.git --save
 ```
 
 ## Example Usage
