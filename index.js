@@ -87,6 +87,7 @@ class GooglePlaceAutocomplete extends Component {
 		return (
 			<View style={[style.container, this.props.style]}>
 				<AutocompleteInput
+					inputContainerStyle={this.props.inputContainerStyle}
 					style={this.props.inputStyle}
 					value={this.state.value}
 					placeholder={this.props.placeholder}
@@ -205,7 +206,8 @@ GooglePlaceAutocomplete.propTypes = {
 		placeholder: PropTypes.string,
 		onChangeText: PropTypes.func,
 		onPredictions: PropTypes.func,
-		onResult: PropTypes.func
+		onResult: PropTypes.func,
+		inputContainerStyle: object
 };
 
 GooglePlaceAutocomplete.defaultProps = {
