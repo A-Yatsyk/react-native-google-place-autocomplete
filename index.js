@@ -211,7 +211,8 @@ GooglePlaceAutocomplete.propTypes = {
 GooglePlaceAutocomplete.defaultProps = {
 	debounce: 250,
 	predictionsStyle: {},
-	inputStyle: {}
+	inputStyle: {},
+	iconSource: false
 };
 
 export const style = StyleSheet.create({
