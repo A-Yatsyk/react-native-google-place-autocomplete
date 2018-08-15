@@ -8,8 +8,7 @@ import {
     number,
     object,
 	string,
-	source,
-	bool,
+	any,
 } from 'prop-types';
 import axios, { CancelToken } from 'axios';
 import AutocompleteInput from './lib/AutocompleteInput';
@@ -25,8 +24,8 @@ class GooglePlaceAutocomplete extends Component {
         onChangeText: func,
         onPredictions: func,
 		onResult: func,
-		source: source,
-		imageWidth: bool
+		source: any,
+		imageWidth: number
     }
 
     static defaultProps = {
