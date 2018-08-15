@@ -3,12 +3,13 @@ import {
     StyleSheet,
     View
 } from 'react-native';
-import {
+import PropTyeps, {
     func,
     number,
     object,
 	string,
-	any,
+    any,
+    oneOfType,
 } from 'prop-types';
 import axios, { CancelToken } from 'axios';
 import AutocompleteInput from './lib/AutocompleteInput';
@@ -25,7 +26,9 @@ class GooglePlaceAutocomplete extends Component {
         onPredictions: func,
 		onResult: func,
 		source: any,
-		imageWidth: number
+        imageWidth: number,
+        inputStyle: oneOfType([number, PropTyeps.style]),
+        predictionsStyle: oneOfType([number, PropTyeps.style])
     }
 
     static defaultProps = {
@@ -62,12 +65,14 @@ class GooglePlaceAutocomplete extends Component {
         return (
             <View style={[style.container, this.props.style]}>
                 <AutocompleteInput
+                    inputStyle={this.props.inputStyle}
                     value={this.state.value}
                     placeholder={this.props.placeholder}
                     onChangeText={this._handleChangeText}
                     debounce={this.props.debounce}
                     onChangeTextSettle={this._handleChangeTextSettle} />
                 <Predictions
+                    predictionsStyle={this.props.predictionsStyle}
 					source={this.props.source}
 					imageWidth={this.props.imageWidth}
                     predictions={this.state.predictions}
